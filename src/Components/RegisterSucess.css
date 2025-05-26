@@ -1,0 +1,118 @@
+/* Removed global body styles to avoid interference with other pages */
+
+/* Container Styles */
+.success-page {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to right, #00bcd4, #8e24aa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Centering the content */
+  .success-container {
+    background: #ffffff;
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Icon styles */
+  .icon {
+    font-size: 70px;
+    color: #28a745;
+    margin-bottom: 20px;
+  }
+  
+  .icon i {
+    font-size: 80px;
+    animation: iconAnimation 2s ease-out infinite;
+  }
+  
+  /* Heading styles */
+  h1 {
+    font-size: 2.5em;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  /* Paragraph styles */
+  p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+  
+  /* Button Styles */
+  .btn {
+    padding: 12px 25px;
+    background: linear-gradient(to right, #ff4081, #9c27b0);
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(to right, #9c27b0, #ff4081);
+    transform: translateY(-3px);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes iconAnimation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 600px) {
+    .success-container {
+      padding: 30px 20px;
+    }
+  
+    h1 {
+      font-size: 2em;
+    }
+  
+    .btn {
+      font-size: 1em;
+      padding: 10px 20px;
+    }
+  }
+  

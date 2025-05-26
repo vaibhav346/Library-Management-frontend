@@ -1,0 +1,62 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Styling for the success page */
+  .update-success-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Success Message Box */
+  .success-message {
+    background-color: #fff;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  /* Header Styling */
+  .success-message h2 {
+    font-size: 36px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  /* Success Text Styling */
+  .success-message p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+  
+  /* Button Styling */
+  .btn-go-back {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-go-back:hover {
+    background-color: #357ABD;
+  }
+  
+  .btn-go-back:focus {
+    outline: none;
+  }
+  

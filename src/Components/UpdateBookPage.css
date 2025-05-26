@@ -1,0 +1,105 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Container for the form */
+  .update-book-page {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;  /* Center the form on the page */
+    margin-top: 50px;  /* Add some space from the top */
+  }
+  
+  /* Header styling */
+  .update-book-page h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input Styling */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  label {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  input[type="text"], input[type="checkbox"] {
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  input[type="checkbox"] {
+    width: auto;
+    margin-top: 8px;
+  }
+  
+  /* Focus effect on inputs */
+  input:focus {
+    border-color: #4A90E2;
+    outline: none;
+  }
+  
+  /* Button Styling */
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #357ABD;
+  }
+  
+  /* Styling for buttons and form fields on submit */
+  button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Spacing and alignment */
+  .form-group input,
+  button {
+    width: 100%;
+  }
+  
+  /* Responsive styling for mobile devices */
+  @media (max-width: 768px) {
+    .update-book-page {
+      padding: 20px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  }
+  

@@ -1,0 +1,59 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    height: 100vh;
+  }
+  
+  .login-form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    width: 350px;
+    text-align: center;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .login-form input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .login-form button {
+    padding: 10px 20px;
+    background-color: #0077ff;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #005ecc;
+  }
+  
+  .student-details {
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .student-details img {
+    width: 120px;
+    border-radius: 60px;
+    margin-top: 10px;
+    border: 2px solid #0077ff;
+  }
+  
