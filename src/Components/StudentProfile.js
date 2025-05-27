@@ -88,6 +88,7 @@ const StudentProfile = () => {
       const response = await fetch(`http://localhost:8080/Student/deletebyid/${student?.userId}/${bookId}`, {
         method: 'DELETE',
       });
+      
 
       if (response.ok) {
         fetchStudentBooks(); // Refresh the student's books after returning
