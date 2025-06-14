@@ -14,6 +14,7 @@ import ContactPage from './Components/ContactPage';
 import BookAddedSuccess from './Components/BookAddedSuccess';
 import UpdateBookPage from './Components/UpdateBooPage';
 import UpdateSuccessPage from './Components/UpdateSuccessPage';
+import AddBook from './Components/AddBook';
 
 const App = () => {
   return(
@@ -21,7 +22,7 @@ const App = () => {
    <div className='App'>
     <Routes>
       <Route path="/" element={<Home/>} />
-      <Route path="/studentregister" element={<StudentRegister/>}/>
+      <Route path="/studentregister/:adminId" element={<StudentRegister/>}/>
       <Route path="/studentlogin" element={<StudentLogin/>}/>
       <Route path="/student-profile" element={<StudentProfile />} />
       <Route path="/registration-success" element={<RegisterSucess/>} />
@@ -34,6 +35,7 @@ const App = () => {
       <Route path='/BookAddedSuccess' element={<BookAddedSuccess/>}/>
       <Route path='/UpdateBookPage' element={<UpdateBookPage/>}/>
       <Route path='/UpdateSuccessPage' element={<UpdateSuccessPage/>}/>
+      <Route path='/AddBook/:adminId' element={<AddBook></AddBook>}></Route>
     </Routes>
    </div>
    </Router>
