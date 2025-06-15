@@ -17,10 +17,11 @@ const AdminProfile = () => {
   const [showStudentBooks, setShowStudentBooks] = useState({}); // To toggle student books
 
   let [searchname,setSearchname]=useState('')
+  console.log(searchname)
   let [searchtitle,setSearchtitle]=useState('')
   let [searchresult,setSearchresult]=useState([])
 
-  let searybybook=()=>{
+  let searchbystudent=()=>{
 
   axios.get(`http://localhost:8080/Student/findbyname/${searchname}`)
   .then((response)=>{
@@ -33,14 +34,14 @@ const AdminProfile = () => {
   .catch((error)=>{alert("error")})
 }
 
-let searchbystudent=()=>{
-
+let searybybook=()=>{
+console.log(searchtitle)
   axios.get(`http://localhost:8080/Book/findbytitle/${searchtitle}`)
   .then((response)=>{
     if(response.data){
       setSearchresult(response.data)
       console.log(searchtitle)
-      setSearchname('');
+      setSearchtitle('');
     }
   })
   .catch((error)=>{alert("error")})
@@ -145,12 +146,18 @@ let searchbystudent=()=>{
 
             <div className="section">
               <h3 className="section-title">📘 Managed Books</h3>
-              <div className='col-3'>
-      <input className="form-control me-2" type="text" placeholder='Enter name to search' value={searchtitle} onChange={(e)=>{setSearchtitle(e.target.value)}} /><button class="btn btn-outline-success" onClick={searybybook}>Search</button>
-    </div>
+       <div className="search-container">
+  <input
+    type="text"
+    placeholder="Enter name to search"
+    value={searchtitle}
+    onChange={(e) => setSearchtitle(e.target.value)}
+  />
+  <button onClick={searybybook}>Search</button>
+</div>
               {bookList.length > 0 ? (
                 <div className="book-list">
-                  {searchresult.length>0?searchresult:bookList.map((book) => (
+                  {(searchresult.length>0?searchresult:bookList).map((book) => (
                     <div key={book.bookId} className="book-item">
                       <img
                         src={book.imageUrl || defaultBookImg}
@@ -200,12 +207,12 @@ let searchbystudent=()=>{
           <div className="right-column">
             <div className="section">
               <h3 className="section-title">🎓 Managed Students</h3>
-              <div className='col-3'>
-      <input className="form-control me-2" type="text" placeholder='Enter name to search' value={setSearchname} onChange={(e)=>{setSearchname(e.target.value)}} /><button class="btn btn-outline-success" onClick={searchbystudent}>Search</button>
+              <div className="search-container">
+      <input className="form-control me-2" type="text" placeholder='Enter name to search' value={searchname} onChange={(e)=>{setSearchname(e.target.value)}} /><button class="btn btn-outline-success" onClick={searchbystudent}>Search</button>
     </div>
               {studentList.length > 0 ? (
                 <div className="student-list">
-                  {searchresult.length>0?searchresult:studentList.map((student) => (
+                  {(searchresult.length>0?searchresult:studentList).map((student) => (
                     <div key={student.sid} className="student-item">
                       <img
                         src={student.imgurl || defaultAdminImg}
