@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AddBook.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddBook() {
   let [title, setTitle] = useState('');
@@ -13,7 +13,7 @@ export default function AddBook() {
   let [returnDate, setReturnDate] = useState('');
   let [imageUrl, setImageUrl] = useState('');
 
-  
+let navigate=useNavigate();  
 
   let params = useParams();
   let id = params.adminId; // coming from URL
@@ -44,7 +44,7 @@ export default function AddBook() {
     axios.post('http://localhost:8080/Book/save', newBook)
       .then((response) => {
         alert("Book added successfully!");
-        
+        navigate('/AdminProfile')
       })
       .catch((error) => {
         console.error("Error adding book:", error);

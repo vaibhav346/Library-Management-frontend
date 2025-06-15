@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import './AddBook.css';
+import './UpdateStudent.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
-export default function UpdateBooPage() {
+export default function UpdateAvailable() {
   let [title, setTitle] = useState('');
   let [author, setAuthor] = useState('');
   let [genre, setGenre] = useState('');
   let [availability, setAvailability] = useState('');
-  // let [borrowDate, setBorrowDate] = useState('');
-  // let [returnDate, setReturnDate] = useState('');
+  let [borrowDate, setBorrowDate] = useState('');
+  let [returnDate, setReturnDate] = useState('');
   let [imageUrl, setImageUrl] = useState('');
 
   
@@ -36,7 +36,9 @@ export default function UpdateBooPage() {
            setAuthor(response.data.author)
            setGenre(response.data.genre)
            setAvailability(response.data.availability)
-          //  setImageUrl(response.data.imageUrl)
+           setBorrowDate(response.data.borrowDate)
+           setReturnDate(response.data.returnDate)
+        //    setImageUrl(response.data.imageUrl)
           
 
         })
@@ -81,7 +83,7 @@ console.log(id)
   return (
     <div className="add-book-container">
       <form className="add-book-form" onSubmit={handleSubmit}>
-        <h2>Update Book</h2>
+        <h2>Update Available</h2>
 
         <label>Title:</label>
         <input type="text" name="title" value={title} onChange={(e) => setTitle(e.target.value)} required />
@@ -99,16 +101,16 @@ console.log(id)
           <option value="No">No</option>
         </select>
 
-        {/* <label>Borrow Date:</label>
-        <input type="date" name="borrowDate" value={borrowDate} onChange={(e) => setBorrowDate(e.target.value)} /> */}
+       <label>Borrow Date:</label>
+        <input type="date" name="borrowDate" value={borrowDate} onChange={(e) => setBorrowDate(e.target.value)} />
 
-        {/* <label>Return Date:</label>
-        <input type="date" name="returnDate" value={returnDate} onChange={(e) => setReturnDate(e.target.value)} /> */}
+        <label>Return Date:</label>
+        <input type="date" name="returnDate" value={returnDate} onChange={(e) => setReturnDate(e.target.value)} /> 
 
         <label>Image URL:</label>
-        <input type="file" name="imageUrl"  accept="image/*" onChange={handleImageChange} />
+        <input type="file" name="imageUrl" accept="image/*"  onChange={handleImageChange} />
 
-        <button type="submit">Update Book</button>
+        <button type="submit">Update Available</button>
       </form>
     </div>
   );
