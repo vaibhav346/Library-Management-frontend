@@ -70,9 +70,9 @@ const Home = () => {
             <li><a href="/members">Members</a></li>
             <li><a href="/AboutPage">About</a></li>
             <li><a href="/ContactPage">Contact</a></li>
-            <li><a href="/AdminRegister">Admin Register</a></li>
+            {/* <li><a href="/AdminRegister">Admin Register</a></li> */}
             <li><a href="/AdminLogin">Admin Login</a></li>
-            <li><a href="/studentregister" >Student Register</a></li>
+            {/* <li><a href="/studentregister" >Student Register</a></li> */}
             <li><a href="/studentlogin" >Student Login</a></li>
 
           </ul>

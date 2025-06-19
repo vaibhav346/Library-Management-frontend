@@ -17,6 +17,7 @@ import UpdateSuccessPage from "./Components/UpdateSuccessPage";
 import AddBook from "./Components/AddBook";
 import UpdateStudent from "./Components/UpdateStudent";
 import UpdateAvailable from "./Components/UpdateAvailable";
+import StudentAddBook from './Components/StudentAddBook'
 
 
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           ></Route>
 
           <Route path='/updateavailable/:bookId' element={<UpdateAvailable></UpdateAvailable>}></Route>
+          <Route path='/studentaddbook/:sid' element={<StudentAddBook></StudentAddBook>}></Route>
          
         </Routes>
       </div>

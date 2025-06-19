@@ -58,17 +58,20 @@
     font-size: 1.5rem;
     color: #333;
     margin: 0 0 10px;
-    text-align: center;
+    text-align: left;
   }
   
   .book-info p {
     font-size: 1rem;
     margin: 5px 0;
     color: #666;
+    text-align: left;
   }
   
   .book-info strong {
-    color: #4b7bec;
+    color: #0d47a1;
+  display: inline-block;
+  width: 100px;
   }
   
   .book-card p strong {
@@ -78,6 +81,7 @@
   .book-card .book-info p {
     font-size: 1rem;
     color: #666; /* Lighter text color */
+    
   }
   
   .book-card:hover .book-info {
