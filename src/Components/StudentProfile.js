@@ -11,6 +11,8 @@ const StudentProfile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [bookList, setBookList] = useState(student?.blist || []);
 
+  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+
   let navigate=useNavigate();
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const StudentProfile = () => {
     const trimmed = url.trim();
     return trimmed.startsWith('http')
       ? trimmed
-      : `http://localhost:8080${trimmed.startsWith('/') ? '' : '/'}${trimmed}`;
+      : `${app}${trimmed.startsWith('/') ? '' : '/'}${trimmed}`;
   };
 
   const handleImageError = (e, defaultImg) => {
@@ -37,7 +39,7 @@ const StudentProfile = () => {
   // Fetch only student-related books (future use)
   const fetchStudentBooks = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/Book/getStudentBooks/${student?.userId}`);
+      const response = await fetch(`${app}/Book/getStudentBooks/${student?.userId}`);
       const data = await response.json();
       setBookList(data);
     } catch (error) {

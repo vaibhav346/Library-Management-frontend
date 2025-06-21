@@ -13,6 +13,8 @@ const UpdateStudent = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [address, setAddress] = useState('');
 
+  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+
   const params = useParams();
   const id = params.sid; // coming from URL
 
@@ -27,7 +29,7 @@ const UpdateStudent = () => {
   },[])
 
   let getstudent=()=>{
-axios.get(`http://localhost:8080/Student/findbyid/${id}`)
+axios.get(`${app}/Student/findbyid/${id}`)
         .then((response)=>{
         
            setStudentusername(response.data.studentusername)
@@ -61,7 +63,7 @@ axios.get(`http://localhost:8080/Student/findbyid/${id}`)
      
     };
 
-    axios.put(`http://localhost:8080/Student/update/${id}`, newStudent)
+    axios.put(`${app}/Student/update/${id}`, newStudent)
       .then((response) => {
         alert("Student Updated successfully!");
       })

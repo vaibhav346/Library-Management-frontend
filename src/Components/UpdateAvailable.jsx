@@ -13,6 +13,7 @@ export default function UpdateAvailable() {
   let [returnDate, setReturnDate] = useState('');
   let [imageUrl, setImageUrl] = useState('');
 
+  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
   
 
   let params = useParams();
@@ -24,7 +25,7 @@ export default function UpdateAvailable() {
 
   let getbook=()=>{
     // console.log(id)
-     axios.get(`http://localhost:8080/Book/findbyid/${id}`)
+     axios.get(`${app}/Book/findbyid/${id}`)
         .then((response)=>{
           // console.log(response.data)
           //  const d = response.data;
@@ -67,7 +68,7 @@ export default function UpdateAvailable() {
      
     };
 console.log(id)
-    axios.put(`http://localhost:8080/Book/update/${id}`, newBook)
+    axios.put(`${app}/Book/update/${id}`, newBook)
       .then((response) => {
         if(response.data!=null){
         alert("Book Update successfully!");

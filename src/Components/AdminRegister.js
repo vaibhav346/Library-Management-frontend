@@ -14,6 +14,7 @@ const AdminRegister = () => {
   let [student,setStudent]=useState([]);
   let [blist,setBlist]=useState([])
   
+  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   let validation=()=>{
     if(admincontactno.length>10||admincontactno.length<10){
@@ -54,7 +55,7 @@ const AdminRegister = () => {
 
     let adminadd={adminusername,adminpassword,adminimgurl,admincontactno,adminemail,adminname,student:[],blist:[]}
     console.log(adminadd)
-    axios.post("http://localhost:8080/admin/save", adminadd)
+    axios.post(`${app}/admin/save`, adminadd)
 
     .then((resonpse)=>{
       if(resonpse.data==="Please enter another username. This is one is already exists"){

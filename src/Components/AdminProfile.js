@@ -8,6 +8,8 @@ import axios from "axios";
 const AdminProfile = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
   
   // let [availability,setAvailability]=useState('')
 
@@ -23,7 +25,7 @@ const AdminProfile = () => {
 
   let searchbystudent=()=>{
 
-  axios.get(`http://localhost:8080/Student/findbyname/${searchname}`)
+  axios.get(`${app}/Student/findbyname/${searchname}`)
   .then((response)=>{
     if(response.data){
       setSearchresult(response.data)
@@ -36,7 +38,7 @@ const AdminProfile = () => {
 
 let searybybook=()=>{
 console.log(searchtitle)
-  axios.get(`http://localhost:8080/Book/findbytitle/${searchtitle}`)
+  axios.get(`${app}/Book/findbytitle/${searchtitle}`)
   .then((response)=>{
     if(response.data){
       setSearchresult(response.data)
@@ -56,7 +58,7 @@ console.log(searchtitle)
 
     if (adminData?.adminId) {
       axios
-        .get(`http://localhost:8080/admin/findbyid/${adminData.adminId}`)
+        .get(`${app}/admin/findbyid/${adminData.adminId}`)
         .then((response) => {
           const data = response.data;
           setAdmin(data);
@@ -73,7 +75,7 @@ console.log(searchtitle)
 
   const deletebook = (bookId) => {
     axios
-      .delete(`http://localhost:8080/Book/detebyid/${bookId}`)
+      .delete(`${app}/Book/detebyid/${bookId}`)
       .then((response) => {
         if (response.data != null) {
           alert("Book deleted");
@@ -89,7 +91,7 @@ console.log(searchtitle)
   let bookstatus=(bookId,action)=>{
     console.log(bookId)
     console.log(action)
-    axios.put(`http://localhost:8080/Book/${action}/${bookId}`)
+    axios.put(`${app}/Book/${action}/${bookId}`)
     .then((response)=>{
         if(response.data){
           console.log(response.data)
