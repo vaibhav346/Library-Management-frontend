@@ -58,7 +58,7 @@ function BookPage() {
             <div className="book-info">
               <h2>{book.title}</h2>
               <p>
-                <strong>ID:</strong> {book.bookId} <br />
+                <strong>Book ID:</strong> {book.bookId} <br />
                 <strong>Author:</strong> {book.author} <br />
                 <strong>Genre:</strong> {book.genre} <br />
                 <strong>Borrowed:</strong> {book.borrowDate || "N/A"} <br />
