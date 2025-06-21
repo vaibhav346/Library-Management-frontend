@@ -78,6 +78,8 @@ const StudentProfile = () => {
                 >
                   ➕ 📚 Add Library Book
                 </button>
+
+                <button className='btn btn-warning' onClick={()=>{navigate('/')}}>Logout</button>
     </div>
 
     {/* Toggle Books */}

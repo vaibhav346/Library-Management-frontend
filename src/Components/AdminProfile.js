@@ -141,6 +141,7 @@ console.log(searchtitle)
                 >
                   ➕ Add Student
                 </button>
+                <button className='btn btn-warning' onClick={()=>{navigate('/')}}>Logout</button>
               </div>
             </div>
 
