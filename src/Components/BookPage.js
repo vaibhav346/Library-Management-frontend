@@ -69,7 +69,7 @@ function BookPage() {
   return (
     <div className="book-page">
       <h1 className="title">Library Book Collection </h1>
-      <h1 className="title">Library Book Collection </h1>
+      {/* <h1 className="title">Library Book Collection </h1> */}
       <div className="search-container">
         <input
           type="text"

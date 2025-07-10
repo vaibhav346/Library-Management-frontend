@@ -2,13 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import "./BookPage.css";
 import defaultImage from "./assets/Book.jpeg";
+import axios from "axios";
 
 function BookPage() {
   const [books, setBooks] = useState([]);
   const navigate = useNavigate();
   const location = useLocation();
-  const { sid } = useParams(); // student ID from URL
-
+  const { sid } = useParams(); // 
+  // student ID from URL
+ let [searchtitle, setSearchtitle] = useState("");
+  let [searchresult, setSearchresult] = useState([]);
   // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   useEffect(() => {
@@ -40,12 +43,42 @@ function BookPage() {
     }
   };
 
+    let searybybook = () => {
+    console.log(searchtitle);
+    // axios.get(`${app}/Book/findbytitle/${searchtitle}`)
+    axios
+      .get(`http://localhost:8080/Book/findbyauthor/${searchtitle}`)
+      .then((response) => {
+        if (response.data) {
+          setSearchresult(response.data);
+          console.log(searchtitle);
+          setSearchtitle("");
+        }
+      })
+      .catch((error) => {
+        alert("error");
+      });
+  };
+
   return (
     <div className="book-page">
       <h1 className="title">Library Book Collection</h1>
 
+ <div className="search-container">
+        <input
+          type="text"
+          placeholder="Enter Author to search"
+          value={searchtitle}
+          onChange={(e) => setSearchtitle(e.target.value)}
+        />
+        <button onClick={searybybook}>Search</button>
+      </div>
+
+      {books.length > 0 ? (
+
       <div className="book-grid">
-        {books.map((book) => (
+        {(searchresult.length > 0 ? searchresult : books).map((book) => (
+      
           <div className="book-card" key={book.bookId}>
             <div className="book-image-container">
               <img
@@ -78,6 +111,9 @@ function BookPage() {
           </div>
         ))}
       </div>
+       ) : (
+        <p>No Books this person</p>
+      )};
     </div>
   );
 }
