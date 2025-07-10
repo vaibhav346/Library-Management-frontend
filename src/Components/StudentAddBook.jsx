@@ -9,10 +9,10 @@ function BookPage() {
   const location = useLocation();
   const { sid } = useParams(); // student ID from URL
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   useEffect(() => {
-    fetch(`${app}/Book/findall`)
+    fetch("http://localhost:8080/Book/findall")
       .then((res) => res.json())
       .then((data) => setBooks(data))
       .catch((err) => console.error("Error:", err));
@@ -22,7 +22,8 @@ function BookPage() {
   const handleAddBookToStudent = async (bookId) => {
     try {
       const response = await fetch(
-        `${app}/Student/addBookToStudent/${sid}/${bookId}`,
+        // `${app}/Student/addBookToStudent/${sid}/${bookId}`,
+        `http://localhost:8080/Student/addBookToStudent/${sid}/${bookId}`,
         {
           method: "POST",
         }

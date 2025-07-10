@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import StudentRegister from "./Components/StudentRegister";
 import StudentLogin from "./Components/StudentLogin";
@@ -17,44 +17,43 @@ import UpdateSuccessPage from "./Components/UpdateSuccessPage";
 import AddBook from "./Components/AddBook";
 import UpdateStudent from "./Components/UpdateStudent";
 import UpdateAvailable from "./Components/UpdateAvailable";
-import StudentAddBook from './Components/StudentAddBook'
+import StudentAddBook from "./Components/StudentAddBook";
 
-
-const App = () => {
+export default function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/studentregister/:adminId"
-            element={<StudentRegister />}
-          />
-          <Route path="/studentlogin" element={<StudentLogin />} />
-          <Route path="/student-profile" element={<StudentProfile />} />
-          <Route path="/registration-success" element={<RegisterSucess />} />
-          <Route path="/AdminRegister" element={<AdminRegister />} />
-          <Route path="/AdminLogin" element={<AdminLogin />} />
-          <Route path="/AdminProfile" element={<AdminProfile />} />
-          <Route path="/BookPage" element={<BookPage />} />
-          <Route path="/AboutPage" element={<AboutPage />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
-          <Route path="/BookAddedSuccess" element={<BookAddedSuccess />} />
-          <Route path="/UpdateBookPage/:bookId" element={<UpdateBookPage />} />
-          <Route path="/UpdateSuccessPage" element={<UpdateSuccessPage />} />
-          <Route path="/AddBook/:adminId" element={<AddBook></AddBook>}></Route>
-          <Route
-            path="/udpatestudent/:sid"
-            element={<UpdateStudent></UpdateStudent>}
-          ></Route>
+    // <Router>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/studentregister/:adminId" element={<StudentRegister />} />
+        <Route path="/studentlogin" element={<StudentLogin />} />
+        <Route path="/student-profile" element={<StudentProfile />} />
+        <Route path="/registration-success" element={<RegisterSucess />} />
+        <Route path="/AdminRegister" element={<AdminRegister />} />
+        <Route path="/AdminLogin" element={<AdminLogin />} />
+        <Route path="/AdminProfile" element={<AdminProfile />} />
+        <Route path="/BookPage" element={<BookPage />} />
+        <Route path="/AboutPage" element={<AboutPage />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
+        <Route path="/BookAddedSuccess" element={<BookAddedSuccess />} />
+        <Route path="/UpdateBookPage/:bookId" element={<UpdateBookPage />} />
+        <Route path="/UpdateSuccessPage" element={<UpdateSuccessPage />} />
+        <Route path="/AddBook/:adminId" element={<AddBook></AddBook>}></Route>
+        <Route
+          path="/udpatestudent/:sid"
+          element={<UpdateStudent></UpdateStudent>}
+        ></Route>
 
-          <Route path='/updateavailable/:bookId' element={<UpdateAvailable></UpdateAvailable>}></Route>
-          <Route path='/studentaddbook/:sid' element={<StudentAddBook></StudentAddBook>}></Route>
-         
-        </Routes>
-      </div>
-    </Router>
+        <Route
+          path="/updateavailable/:bookId"
+          element={<UpdateAvailable></UpdateAvailable>}
+        ></Route>
+        <Route
+          path="/studentaddbook/:sid"
+          element={<StudentAddBook></StudentAddBook>}
+        ></Route>
+      </Routes>
+    </div>
+    // </Router>
   );
-};
-
-export default App;
+}

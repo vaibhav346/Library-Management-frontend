@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -65,15 +66,15 @@ const Home = () => {
         <nav className="navbar">
           <button className="toggle-btn" onClick={toggleMenu}>☰</button>
           <ul className={`nav-links ${menuOpen ? 'show' : ''}`}>
-            <li><a href="/">Home</a></li>
-            <li><a href="/BookPage">Books</a></li>
-            <li><a href="/members">Members</a></li>
-            <li><a href="/AboutPage">About</a></li>
-            <li><a href="/ContactPage">Contact</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/BookPage">Books</Link></li>
+            <li><Link to="/members">Members</Link></li>
+            <li><Link to="/AboutPage">About</Link></li>
+            <li><Link to="/ContactPage">Contact</Link></li>
             {/* <li><a href="/AdminRegister">Admin Register</a></li> */}
-            <li><a href="/AdminLogin">Admin Login</a></li>
+            <li><Link to="/AdminLogin">Admin Login</Link></li>
             {/* <li><a href="/studentregister" >Student Register</a></li> */}
-            <li><a href="/studentlogin" >Student Login</a></li>
+            <li><Link to="/studentlogin" >Student Login</Link></li>
 
           </ul>
         </nav>

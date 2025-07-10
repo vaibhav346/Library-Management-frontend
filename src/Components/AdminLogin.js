@@ -9,7 +9,7 @@ const AdminLogin = () => {
     adminpassword: ""
   });
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   const navigate = useNavigate();
 
@@ -21,7 +21,8 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`${app}/admin/login`, credentials);
+      // const res = await axios.post(`${app}/admin/login`, credentials);
+      const res = await axios.post("http://localhost:8080/admin/login", credentials);
       alert("Admin Login Successful!");
 
       // ✅ Save admin data to localStorage

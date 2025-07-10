@@ -13,7 +13,7 @@ export default function AddBook() {
   let [returnDate, setReturnDate] = useState('');
   let [imageUrl, setImageUrl] = useState('');
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
 let navigate=useNavigate();  
 
@@ -43,7 +43,8 @@ let navigate=useNavigate();
       }
     };
 
-    axios.post(`${app}/Book/save`, newBook)
+    // axios.post(`${app}/Book/save`, newBook)
+    axios.post("http://localhost:8080/Book/save", newBook)
       .then((response) => {
         alert("Book added successfully!");
         navigate('/AdminProfile')

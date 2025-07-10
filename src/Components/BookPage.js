@@ -8,13 +8,13 @@ function BookPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   // 🟡 Get admin ID passed from previous page
   const { adminId } = location.state || {};
 
   useEffect(() => {
-    fetch(`${app}/Book/findall`)
+    fetch("http://localhost:8080/Book/findall")
       .then(res => res.json())
       .then(data => setBooks(data))
       .catch(err => console.error("Error:", err));
@@ -23,7 +23,8 @@ function BookPage() {
   // 🔵 Handle Add Book to Admin
   const handleAddBookToAdmin = async (book) => {
     try {
-      const response = await fetch(`${app}/Book/add/${adminId}`, {
+      // const response = await fetch(`${app}/Book/add/${adminId}`, {
+      const response = await fetch(`http://localhost:8080/Book/add/${adminId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

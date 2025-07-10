@@ -13,7 +13,7 @@ const StudentRegister = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [address, setAddress] = useState('');
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   const params = useParams();
   const id = params.adminId; // coming from URL
@@ -41,7 +41,8 @@ const StudentRegister = () => {
       }
     };
 
-    axios.post(`${app}/Student/savedtud`, newStudent)
+    // axios.post(`${app}/Student/savedtud`, newStudent)
+    axios.post("http://localhost:8080/Student/savedtud", newStudent)
       .then((response) => {
         alert("Student added successfully!");
       })

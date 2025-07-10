@@ -13,7 +13,7 @@ export default function UpdateBooPage() {
   // let [returnDate, setReturnDate] = useState('');
   let [imageUrl, setImageUrl] = useState('');
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   let params = useParams();
   let id = params.bookId; // coming from URL
@@ -24,7 +24,8 @@ export default function UpdateBooPage() {
 
   let getbook=()=>{
     // console.log(id)
-     axios.get(`${app}/Book/findbyid/${id}`)
+    //  axios.get(`${app}/Book/findbyid/${id}`)
+     axios.get(`http://localhost:8080/Book/findbyid/${id}`)
         .then((response)=>{
           // console.log(response.data)
           //  const d = response.data;
@@ -65,7 +66,8 @@ export default function UpdateBooPage() {
      
     };
 console.log(id)
-    axios.put(`${app}/Book/update/${id}`, newBook)
+    // axios.put(`${app}/Book/update/${id}`, newBook)
+    axios.put(`http://localhost:8080/Book/update/${id}`, newBook)
       .then((response) => {
         if(response.data!=null){
         alert("Book Update successfully!");

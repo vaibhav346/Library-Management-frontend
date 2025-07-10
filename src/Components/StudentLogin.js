@@ -9,7 +9,7 @@ const StudentLogin = () => {
     studentpassword: '',
   });
 
-  var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
+  // var app="http://51.20.187.166:8080/Library_Management_Project-0.0.1-SNAPSHOT"
 
   const navigate = useNavigate(); // Initialize navigate
 
@@ -21,7 +21,7 @@ const StudentLogin = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        `${app}/Student/login`, // Ensure this URL is correct
+        "http://localhost:8080/Student/login", // Ensure this URL is correct
         credentials, // Pass credentials to the backend
         { headers: { 'Content-Type': 'application/json' } } // Specify content type
       );
