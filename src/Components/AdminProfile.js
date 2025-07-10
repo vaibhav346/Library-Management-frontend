@@ -279,7 +279,7 @@ console.log(searchtitle)
                                 {student.blist.map((book) => (
                                   <div key={book.bookId} className="book-item">
                                     <img
-                                      src={book.imageUrl || defaultBookImg}
+                                      src={book.imageUrl}
                                       alt={book.title}
                                       className="book-img"
                                     />

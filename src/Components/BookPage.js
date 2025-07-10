@@ -70,7 +70,7 @@ function BookPage() {
     <div className="book-page">
       <h1 className="title">Library Book Collection </h1>
       {/* <h1 className="title">Library Book Collection </h1> */}
-      <div className="search-container">
+      {/* <div className="search-container">
         <input
           type="text"
           placeholder="Enter Author to search"
@@ -78,7 +78,7 @@ function BookPage() {
           onChange={(e) => setSearchtitle(e.target.value)}
         />
         <button onClick={searybybook}>Search</button>
-      </div>
+      </div> */}
       {books.length > 0 ? (
         <div className="book-grid">
           {(searchresult.length > 0 ? searchresult : books).map((book) => (
@@ -102,12 +102,12 @@ function BookPage() {
                   <strong>Status:</strong>{" "}
                   {book.availability ? "Available" : "Borrowed"}
                 </p>
-                <button
+                {/* <button
                   className="btn-add-book"
                   onClick={() => handleAddBookToAdmin(book)}
                 >
                   ➕ Add Book
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
